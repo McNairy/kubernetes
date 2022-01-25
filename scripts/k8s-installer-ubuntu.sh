@@ -38,7 +38,7 @@ sudo systemctl restart containerd
 sudo swapoff -a
 
 # Persists disable swap
-sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
+sudo sed -i '/swap/ s/^\(.*\)$/#\1/g' /etc/fstab
 
 # Required packages
 sudo apt-get update && sudo apt-get install -y apt-transport-https curl
