@@ -1,0 +1,32 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: nginx-pod
+spec:
+  volumes:
+    - name: openebs-hostpath
+      persistentVolumeClaim:
+       claimName: openebs-hostpath
+  containers:
+    - name: nginx
+      image: nginx
+      ports:
+        - containerPort: 80
+          name: "http-server"
+      volumeMounts:
+        - mountPath: "/usr/share/nginx/html"
+          name: openebs-hostpath
+
+---
+
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: openebs-hostpath
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 3Gi
+

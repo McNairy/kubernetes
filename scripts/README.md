@@ -1,0 +1,1 @@
+While taking the Certified Kubernetes Administrator and Certified Kubernetest Application Developer courses on [A Cloud Guru](https://acloudguru.com) I created these scripts to document the instructions they were providing me and over time created some of my own.

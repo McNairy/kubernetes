@@ -1,7 +1,7 @@
 Installed OpenEBS for local storage usage.
 
 [OpenEBS](https://openebs.io/docs/user-guides/localpv-hostpath#create-a-persistentvolumeclaim)
-
+[Deploy and Use OpenEBS Container Storage on Kubernetes](https://computingforgeeks.com/deploy-and-use-openebs-container-storage-on-kubernetes/)
 Dynamic Provisioning so I don't have create PVC definitions for each app I install.
 
 * [Dynamic Provisioning](https://kubernetes.io/docs/concepts/storage/dynamic-provisioning/)
