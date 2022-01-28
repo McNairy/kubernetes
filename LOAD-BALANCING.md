@@ -22,7 +22,7 @@ Create the metallb-system namespace and install helm chart.
 
 ```
 kubectl create namespace metallb-system
-helm install metallb bitnami/metallb -n metallb-system -f values.yaml
+helm install metallb bitnami/metallb --namespace metallb-system -f values.yaml
 ```
 
 That's it. Now a service with a spec.type of LoadBalancer will automatically be assigned an IP from the default address pool.
