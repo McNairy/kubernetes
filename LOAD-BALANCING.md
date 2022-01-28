@@ -18,7 +18,7 @@ configInline:
       - 192.168.1.200-192.168.1.240
 ```
 
-Create kafka namespace and install helm chart.
+Create the kafka namespace and install helm chart.
 
 ```
 $ kubectl create namespace kafka
