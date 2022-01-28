@@ -18,11 +18,11 @@ configInline:
       - 192.168.1.200-192.168.1.240
 ```
 
-Create the kafka namespace and install helm chart.
+Create the metallb-system namespace and install helm chart.
 
 ```
-$ kubectl create namespace kafka
-$ helm install kafka bitnami/kafka -n kafka -f values.yaml
+$ kubectl create namespace metallb-system
+$ helm install metallb bitnami/metallb -n metallb-system -f values.yaml
 ```
 
 That's it. Now a service with a spec.type of LoadBalancer will automatically be assigned an IP from the default address pool.
