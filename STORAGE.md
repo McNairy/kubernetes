@@ -1,4 +1,4 @@
-Installed OpenEBS for local storage usage.
+**Installed OpenEBS for local storage usage.**
 
 [OpenEBS](https://openebs.io/docs/user-guides/localpv-hostpath#create-a-persistentvolumeclaim)
 [Deploy and Use OpenEBS Container Storage on Kubernetes](https://computingforgeeks.com/deploy-and-use-openebs-container-storage-on-kubernetes/)
@@ -16,10 +16,17 @@ This was actually quite confusing because the documentation says to run the <cod
 
 <code>kubectl exec kube-apiserver-k8s-control -n kube-system -- kube-apiserver -h | grep enable-admission-plugins</code>
 
+**Installed NFS for network storage**
+
+My hard drive crashed after I got kubernetes logging to kafka. I suspect it was just too much running three VMs and logging all of kubernetes logs to that same server. So setup an NFS server and dynamic provisioning. After getting that done then I just use the nfs-client storage class to create volumes on the NFS server.
+
 
 * [Change Default Storage Class](https://kubernetes.io/docs/tasks/administer-cluster/change-default-storage-class/)
 kubectl patch storageclass openebs-hostpath -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 
-Misc
+Resources
 * [Understand Volume Provisioning in kubernetes using PVs and PVCs](https://medium.com/@dunefro/part-1-4-container-attached-storage-with-openebs-understand-volume-provisioning-in-kubernetes-e7d7497dfe7f)
 * [How to access kube-apiserver on command line?](https://stackoverflow.com/questions/56542351/how-to-access-kube-apiserver-on-command-line)
+* [How to setup an NFS server](https://learn.acloud.guru/handson/afe186bc-c296-4465-b222-a31e1a861292)
+* [Kubernetes NFS Subdir External Provisioner](https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner)
+* [A guide to setting up dynamic NFS provisioning in Kubernetes](https://www.youtube.com/watch?v=DF3v2P8ENEg)
