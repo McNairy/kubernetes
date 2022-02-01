@@ -11,7 +11,7 @@ Updated parameters in the values.yaml file.
 
 ```
 deleteTopicEnable: true
-storageClass: nfs-client # There are a few one them, I filled in all of them
+storageClass: nfs-client # There are a few of them, I filled in all of them with "nfs-client"
 
 ```
 
@@ -25,12 +25,12 @@ kubectl create namespace kafka
 helm install kafka bitnami/kafka --namespace kafka -f values.yaml
 ```
 
-To manage kafka from the command line login to one of the kafka servers and navigate to where the command-line tools are located. There is a kafka-client I could install but why waste the resources? For example:
+To manage kafka from the command line login to one of the kafka servers and navigate to where the command-line tools are located. There is a kafka-client I could install but why waste the resources? For example, I did the following to create the kubernetes topic I ship logs:
 
 ```
 kubectl exec --stdin --tty kafka-0 --namespace kafka -- /bin/bash
 cd /opt/bitnami/kafka/bin
-kafka-topics.sh --bootstrap-server localhost:9092 --create --topic test --partions 1 --replication-factor 1
+kafka-topics.sh --bootstrap-server localhost:9092 --create --topic kubernetes --partions 1 --replication-factor 1
 ```
 
 *Resources*
