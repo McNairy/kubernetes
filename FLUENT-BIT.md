@@ -21,8 +21,8 @@ Appends this to the outputs section.
      [OUTPUT]
          Name    kafka
          Match   *
-         Brokers 192.168.1.200
-         Topics  test
+         Brokers kafka.logging.svc.cluster.local:9092
+         Topics  kubernetes
 ```
 
 Create the fluent-bit namespace and install helm chart.
