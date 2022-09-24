@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=1.23.1-00
+VERSION=1.25.2-00
 
 #Install and configure containerd
 cat <<EOF | sudo tee /etc/modules-load.d/containerd.conf
