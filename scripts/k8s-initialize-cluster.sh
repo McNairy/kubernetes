@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=1.23.1
+VERSION=1.25.2
 NETWORK=10.10.0.0/16
 
 # Initialize k8s control plane
@@ -13,4 +13,4 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 # Install the Calico Network Add-On
 # This could be flannel or any valid k8s network component
-kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.24.1/manifests/calico.yaml
